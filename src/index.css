@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans:
+    "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme(--color-zinc-700);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme(--color-zinc-600);
+}
+
+/* Tooltip fade-in animation */
+@keyframes tooltip-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@utility animate-tooltip-in {
+  animation: tooltip-in 0.15s ease-out;
+}
+
+/* Smooth body defaults */
+body {
+  margin: 0;
+  background-color: theme(--color-zinc-900);
+  color: theme(--color-zinc-100);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+/* Selection highlight color */
+::selection {
+  background-color: theme(--color-violet-500 / 40%);
+  color: white;
+}
